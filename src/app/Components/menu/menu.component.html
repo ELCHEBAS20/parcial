@@ -5,6 +5,9 @@
     <mat-nav-list>
       <a mat-list-item href="/Repuestos">Repuestos</a>
       <a mat-list-item href="/Vehiculos">Vehiculos</a>
+      <a mat-list-item href="/Form-Repuestos">Form-Respuestos</a>
+      <a mat-list-item href="/Form-Vehiculos">Form-Vehiculos</a>
+      <a mat-list-item (click)="CerrarSesion()">Cerrar Sesion</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -13,9 +16,8 @@
         *ngIf="isWeb$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>PARCIAL_PRIMER_CORTE</span>
+      <span>PARCIAL_SEGUNDO_CORTE</span>
     </mat-toolbar>
-
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
-  <router-outlet></router-outlet>
 </mat-sidenav-container>

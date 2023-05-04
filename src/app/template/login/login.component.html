@@ -1,0 +1,45 @@
+<div *ngIf="isAcceso;else tmpElse" style="width: 100%;height: 100%;">
+  <app-menu></app-menu>
+</div>
+
+<ng-template #tmpElse>
+  <div class="container">
+    <div class="card w-50">
+      <div class="card-body">
+        <div class="bx-card">
+          <h2>Bienvenido Usuari@</h2>
+          <div class="m-4">
+            <form class="example-form" [formGroup]="formUser" novalidate (ngSubmit)="onsubmit(formUser)">
+              <div>
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Usuario" formControlName="user" required>
+                  <mat-error *ngIf="formUser.controls['user'].hasError('required')">
+                    El usuario es <strong>requerido</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="full-width">
+                  <input matInput type="password" placeholder="Contraseña" formControlName="pswd" required>
+                  <mat-error *ngIf="formUser.controls['pswd'].hasError('required')">
+                    La contraseña es <strong>requerido</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="m-2">
+                <a href="">¿Olvidastes contraseña?</a>
+              </div>
+
+              <div class="m-3">
+                <button class="btn btn-primary w-75">Ingresar</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <button (click)="getAcceso()">OK</button> -->
+</ng-template>

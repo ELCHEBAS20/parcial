@@ -1,0 +1,62 @@
+<form [formGroup]="formmain" novalidate (ngSubmit)="functionFormCreate()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Formulario-Vehiculos</mat-card-title>
+    </mat-card-header>
+    <br>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="idVehiculo" formControlName="idVehiculo">
+            <mat-error *ngIf="formmain.controls['idVehiculo'].hasError('required')">
+              El vehiculo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Marca" formControlName="Marca">
+            <mat-error *ngIf="formmain.controls['Marca'].hasError('required')">
+              La Marca es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Color" formControlName="Color">
+            <mat-error *ngIf="formmain.controls['Color'].hasError('required')">
+              El color is <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Modelo" formControlName="Modelo">
+            <mat-error *ngIf="formmain.controls['Modelo'].hasError('required')">
+              El Modelo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Placa" formControlName="Placa">
+            <mat-error *ngIf="formmain.controls['Placa'].hasError('required')">
+              La Placa es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

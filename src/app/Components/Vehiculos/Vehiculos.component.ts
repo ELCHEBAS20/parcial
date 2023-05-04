@@ -9,15 +9,24 @@ import { AppConsumoService } from '../../Config/Services/app-consumo.service';
 })
 export class VehiculosComponent implements OnInit {
 
+  public displayColumns: string[] = [];
+  public dataSource: any[] = [];
+  public StrlPlacelholder = 'Vehiculos';
+
   constructor(public httpcliente: AppConsumoService) { }
+
+  public strlvalor = 'Hola mundo';
 
   ngOnInit() {
     this.function_GET();
+
   }
 
   public function_GET() {
-    return this.httpcliente.function_GET('Vehiculoes').subscribe((resp: any) => {
-      console.log(resp);
+    this.httpcliente.function_GET('Vehiculoes').subscribe((resp: any) => {
+      let objKey = Object.keys(resp[0]);
+      this.displayColumns = objKey;
+      this.dataSource = resp;
     })
   }
 

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PARCIAL_PRIMER_CORTE';
+
+  constructor() { }
+
+  public getLogin() {
+
+  }
 }

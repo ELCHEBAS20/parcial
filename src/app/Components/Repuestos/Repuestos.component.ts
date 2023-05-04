@@ -8,6 +8,10 @@ import { AppConsumoService } from '../../Config/Services/app-consumo.service';
 })
 export class RepuestosComponent implements OnInit {
 
+  public displayColumns: string[] = [];
+  public dataSource: any[] = [];
+  public StrlPlacelholder: string = 'Repuestos';
+
   constructor(public ServicesConsumo: AppConsumoService) { }
 
   ngOnInit() {
@@ -16,7 +20,9 @@ export class RepuestosComponent implements OnInit {
 
   public function_Consumo_inicial() {
     this.ServicesConsumo.function_GET('Repuestoes').subscribe((resp: any) => {
-      console.log(resp);
+      let objKey = Object.keys(resp[0]);
+      this.displayColumns = objKey;
+      this.dataSource = resp;
     })
   }
 

@@ -1,0 +1,18 @@
+.container {
+  position: relative;
+  top: 200px;
+  left: 300px;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.bx-card {
+  text-align: center;
+}
+
+.full-width {
+  width: 400px;
+}
